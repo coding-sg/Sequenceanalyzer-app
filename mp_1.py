@@ -49,6 +49,8 @@ if analyze and sequence:
     
     st.subheader("Amino Acid Composition Plot")
     fig1, ax1 = plt.subplots()
+    plt.xlabel('X-axis',size=12) 
+    plt.ylabel('Y-axis',size=12)
     ax1.bar(df["Amino Acid"], df["Percentage"])
     st.pyplot(fig1)
     
@@ -101,10 +103,12 @@ if analyze and sequence:
     st.write("Basic %:", round(basic, 3))
 
     fig2, ax2 = plt.subplots()
-    ax2.bar(["Acidic", "Basic"], [acidic, basic])
+    ax2.bar(["Acidic", "Basic"], [acidic, basic], color=['red', 'blue'])
+    plt.xlabel('X-axis', size=12) 
+    plt.ylabel('Y-axis', size=12)  
     ax2.set_title("Acidic vs Basic Content")
     st.pyplot(fig2)
-    
+        
     buf2 = io.BytesIO()
     fig2.savefig(buf2, format="png")
     st.download_button(
