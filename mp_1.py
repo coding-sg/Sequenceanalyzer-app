@@ -193,5 +193,3 @@ if pdb_id_input:
 
     else:
         st.error("Invalid PDB ID or structure not found.")
-
-    
