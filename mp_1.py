@@ -183,14 +183,16 @@ if pdb_id_input:
         view.zoomTo()
         
         components.html(view._make_html(), height=500, width=700)
+        html_data = view._make_html()
+        st.download_button(
+            label="Download 3D Structure (HTML)",
+            data=html_data,
+            file_name=f"{pdb_id_input}_structure.html",
+            mime="text/html"
+        )
+
 
     else:
         st.error("Invalid PDB ID or structure not found.")
 
-    html_data = view._make_html()
-    st.download_button(
-        label="Download 3D Structure (HTML)",
-        data=html_data,
-        file_name=f"{pdb_id_input}_structure.html",
-        mime="text/html"
-    )
+    
