@@ -191,7 +191,6 @@ if pdb_id_input:
             mime="text/html"
         )
 
-
     else:
         st.error("Invalid PDB ID or structure not found.")
 
